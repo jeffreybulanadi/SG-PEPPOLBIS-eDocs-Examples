@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+           targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+           elementFormDefault="qualified">
+
+    <!-- Import common types -->
+    <xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
+    <xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
+
+    <!-- Root element -->
+    <xs:element name="ApplicationResponse" type="ubl:ApplicationResponseType"/>
+
+    <!-- ApplicationResponse Type Definition -->
+    <xs:complexType name="ApplicationResponseType">
+        <xs:sequence>
+            <!-- UBL Version Identifier -->
+            <xs:element ref="cbc:UBLVersionID"/>
+            
+            <!-- Customization Identifier -->
+            <xs:element ref="cbc:CustomizationID"/>
+            
+            <!-- Profile Identifier -->
+            <xs:element ref="cbc:ProfileID"/>
+            
+            <!-- Response Identifier -->
+            <xs:element ref="cbc:ID"/>
+            
+            <!-- Response Issue Date -->
+            <xs:element ref="cbc:IssueDate"/>
+            
+            <!-- Response Code -->
+            <xs:element ref="cbc:ResponseCode"/>
+            
+            <!-- Other elements as per PEPPOL BIS Invoice Response specification -->
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

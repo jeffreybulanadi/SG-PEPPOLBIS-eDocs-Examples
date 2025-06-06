@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Order-2"
+           targetNamespace="urn:oasis:names:specification:ubl:schema:xsd:Order-2"
+           elementFormDefault="qualified">
+
+    <!-- Import common types -->
+    <xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
+    <xs:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
+
+    <!-- Root element -->
+    <xs:element name="Order" type="ubl:OrderType"/>
+
+    <!-- Order Type Definition -->
+    <xs:complexType name="OrderType">
+        <xs:sequence>
+            <!-- UBL Version Identifier -->
+            <xs:element ref="cbc:UBLVersionID"/>
+            
+            <!-- Customization Identifier -->
+            <xs:element ref="cbc:CustomizationID"/>
+            
+            <!-- Profile Identifier -->
+            <xs:element ref="cbc:ProfileID"/>
+            
+            <!-- Order Identifier -->
+            <xs:element ref="cbc:ID"/>
+            
+            <!-- Order Issue Date -->
+            <xs:element ref="cbc:IssueDate"/>
+            
+            <!-- Order Issue Time (optional) -->
+            <xs:element ref="cbc:IssueTime" minOccurs="0"/>
+            
+            <!-- Other elements as per PEPPOL BIS 3.0 Order specification -->
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
